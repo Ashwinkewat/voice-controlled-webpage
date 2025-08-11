@@ -1,8 +1,8 @@
 
 body {
   margin: 0;
-  background-color: white;
-}
+  }
+
 
 #bg-video {
   position: fixed;
@@ -23,7 +23,7 @@ body {
   align-items: center;
 }
 
-button {
+.button1 {
   margin: 0.5rem;
   padding: 30px;
   font-size: 300%;
@@ -40,24 +40,12 @@ button {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: xx-large;
   margin-top: 50px;
+  margin-bottom: 50px;
   border:solid, black;
   border-radius: 30px;
   padding-left: 20px;
   padding-right: 20px;
   display: inline-block;
-}
-.heading2{
-  background-color: aliceblue;
-  padding: 5px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 300%;
-  margin-top: 50px;
-  border:solid, black;
-  border-radius: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: inline-block;
-  margin-bottom: 60px;
 }
 .output-text{
   background-color: aliceblue;
@@ -73,14 +61,17 @@ button {
   margin-bottom: 60px;
 }
 .image-display {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
   border: 4px solid #333;
   border-radius: 8px;
-  max-width: 90vw;
-  height: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-   display: flex;
   justify-content: center;
-  margin-top: 20px;
+ 
 }
 .quote-box {
   margin-top: 20px;
@@ -92,4 +83,67 @@ button {
   text-align: center;
   color: #0b0707;
   font-size: 500%;
+}
+.description-box {
+  font-size: 400%;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
+  color: white; /* so text is readable */
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.description-box.changed {
+  font-family: "Courier New", monospace;
+  font-size: 500%;
+  font-style: italic;
+  color:white;
+  margin-bottom: 50px;
+}
+.navbar {
+  position: fixed;
+  top: 115px; /* just below the button */
+  left: 0px; /* aligned with button’s left edge */
+  width: 670px;
+  background: #222;
+  color: white;
+  padding: 15px;
+  transition: transform 0.4s ease;
+  transform: translateY(-120%); /* hidden above view */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 60px;
+}
+
+
+.navbar.show {
+  transform: translateY(0); /* slide down into view */
+}
+
+.navbutton {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1100;
+  font-size: 300%;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 30px;
+  background: whitesmoke;
+  color: black;
+  border: #0b0707 solid;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+  width: 700px;
 }
